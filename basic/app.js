@@ -7,6 +7,7 @@ console.log(true);
 var b = "hello";
 console.log(b);
 console.log([1,2,3,4,"abc"]);
+// object literals
 console.log({a:1,b:2});
 // table format
 console.table({a:1,b:2});
@@ -50,7 +51,7 @@ let v5;
 console.log(typeof v5);
 
 //symbol
-const v6 = Symbol();
+const v6 = Symbol;
 console.log(typeof v6);
 
 
@@ -68,6 +69,29 @@ const v8 = {
 console.log(typeof v8);
 
 // date
+// 'Date()' and 'new Date()' both works no error 'new Date()' is prefferable
 const v9 = new Date();
 console.log(v9);
 console.log(typeof v9);
+
+// number to string
+let val;
+val = String('5');
+console.log(val);
+
+// NaN -> not a number
+// string to number
+val = Number('6');
+
+// true returns 1
+val = Number(true);
+
+// false returns 0
+val = Number(false);
+
+// null returns o
+val = Number(null);
+
+console.log(val);
+// tofixed(5) indicates decimal number
+console.log(val.toFixed(5));
