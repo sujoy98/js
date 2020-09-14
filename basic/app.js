@@ -135,7 +135,25 @@ html =
 // document.body.innerHTML=html;
 document.write(html);
 
+// SORTING FOR STRING ARRAY
 fruits = ["Banana", "Orange", "Apple", "Mango"];
 val = fruits.sort();
 val = fruits.reverse();
+console.log(val);
+
+// SORTING FOR NEUMERIC ARRAY
+neumeric = [23,56,12,78];
+// assending order
+val = neumeric.sort(function(a,b){return a-b});
+console.log(val);
+// decending order
+val = neumeric.sort(function(a,b){return b-a});
+console.log(val);
+
+// .find() -> it will return the first number that matches the condition
+const numbers = [23,34,12,56,78];
+function over50(numbers){
+	return numbers>50;
+}
+val = numbers.find(over50);
 console.log(val);
