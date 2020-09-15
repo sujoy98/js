@@ -231,3 +231,40 @@ for(let x in user){
 	//console.log(x); // returns only keys
 	console.log(`${x}: ${user[x]}`);
 }
+
+// WINDOW METHODS / OBJECTS / PROPERTIES
+
+// const input = prompt("Enter your name !");
+// alert(`Your name is ${input}`);
+
+// CONFIRM
+
+// if(confirm("Are you sure ?")){
+// 	console.log('You confirmed');
+// }else{
+// 	console.log('You cancelled');
+// }
+
+// Getting OUTER and INNER Window HEIGHT and WIDTH
+let dimention;
+// OUTER
+dimention = window.outerHeight;
+console.log(dimention);
+
+dimention = window.outerWidth;
+console.log(dimention);
+
+// INNER
+dimention = window.innerHeight;
+console.log(dimention);
+
+dimention = window.innerWidth;
+console.log(dimention);
+
+// SCROLL points or location Y-> horizontal , X-> vertical
+let valN
+valN = window.scrollY;
+console.log(valN);
+
+valN = window.scrollX;
+console.log(valN);
