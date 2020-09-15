@@ -145,6 +145,7 @@ console.log(val);
 // SORTING FOR NEUMERIC ARRAY
 neumeric = [23,56,12,78];
 // assending order
+// the compare function inside sort() takes 2 elements and compare between them, for 23 and 56 -> 23-56= -33,so 23 is smaller the sorting goes like this, but if we doesnt use the callback function the array of num gets sorted by first dig to avoid that we need the callback function.
 val = neumeric.sort(function(a,b){return a-b});
 console.log(val);
 // decending order
@@ -153,6 +154,7 @@ console.log(val);
 
 // .find() -> it will return the first number that matches the condition
 const numbers = [23,34,12,56,78];
+// we dont need to define num
 function over50(num){
 	return num>50;
 }
@@ -171,7 +173,7 @@ for(let i=0;i<person.length;i++){
 	console.log(person[i].age);
 }
 
-// PROPERTY FUNCTION
+// PROPERTY FUNCTION (function as an object property)
 const todo = {
 	add:function(a,b){
 		return a+b;
@@ -182,7 +184,7 @@ const todo = {
 	}
 }
 
-// we can also define function outside the object
+// we can also define function outside the same object using objectName.functionName
 todo.delete = function(id){
 	console.log(`Delete todo ${id}`);
 }
@@ -203,27 +205,28 @@ const ids = users.map (function(user){
 });
 console.log(ids);
 // we use map to create seperate array for id
-const idss = users.map (function(user){
+const names = users.map (function(user){
 	return user.id;
 });
-console.log(idss);
+console.log(names);
 
 // FOR-EACH we dont need to initialize ar  
 
 const ar1 = [1,2,4,'sed'];
-// in for each the function take three parameters, itarator(cumpolsory), index, array.
+// in for-each the function take three parameters, itarator(cumpolsory), index, array.
 ar1.forEach(function(ar, index, array){
 	console.log(`${index}: ${ar}`);
 	console.log(array);
 });
 
-// FOR-IN
+// FOR-IN is for objects (similar to for-each loop)
 
 const user = {
 	firstName: 'John',
 	lastName: 'Smith',
 	age: 30
 }
+// for(x in user) -> also working
 for(let x in user){
 	//console.log(x); // returns only keys
 	console.log(`${x}: ${user[x]}`);
