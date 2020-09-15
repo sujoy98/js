@@ -135,7 +135,8 @@ html =
 // document.body.innerHTML=html;
 document.write(html);
 
-// SORTING FOR STRING ARRAY
+// 15 Aug
+// SORTING FOR STRING ARRAY sort() -> in general sorts Alphabetically
 fruits = ["Banana", "Orange", "Apple", "Mango"];
 val = fruits.sort();
 val = fruits.reverse();
@@ -152,8 +153,78 @@ console.log(val);
 
 // .find() -> it will return the first number that matches the condition
 const numbers = [23,34,12,56,78];
-function over50(numbers){
-	return numbers>50;
+function over50(num){
+	return num>50;
 }
 val = numbers.find(over50);
 console.log(val);
+
+// ARRAY OF OBJECTS
+const person = [
+	{name: 'john',age: '30'},
+	{name: 'mike', age: '56'},
+	{name: 'jake', age: '78'}
+];
+val = person;
+for(let i=0;i<person.length;i++){
+	console.log(person[i].name);
+	console.log(person[i].age);
+}
+
+// PROPERTY FUNCTION
+const todo = {
+	add:function(a,b){
+		return a+b;
+		// console.log('Add todo');
+	},
+	edit:function(id){
+		console.log(`Edit todo ${id}`);
+	}
+}
+
+// we can also define function outside the object
+todo.delete = function(id){
+	console.log(`Delete todo ${id}`);
+}
+
+console.log(todo.add(5,5));
+todo.edit(23);
+todo.delete(2);
+
+// Map
+
+const users = [
+	{id: 1, name: 'John'},
+	{id: 2, name: 'Steve'}
+];
+// we use map to create seperate array for name, we dont need to initialize user
+const ids = users.map (function(user){
+	return user.name;
+});
+console.log(ids);
+// we use map to create seperate array for id
+const idss = users.map (function(user){
+	return user.id;
+});
+console.log(idss);
+
+// FOR-EACH we dont need to initialize ar  
+
+const ar1 = [1,2,4,'sed'];
+// in for each the function take three parameters, itarator(cumpolsory), index, array.
+ar1.forEach(function(ar, index, array){
+	console.log(`${index}: ${ar}`);
+	console.log(array);
+});
+
+// FOR-IN
+
+const user = {
+	firstName: 'John',
+	lastName: 'Smith',
+	age: 30
+}
+for(let x in user){
+	//console.log(x); // returns only keys
+	console.log(`${x}: ${user[x]}`);
+}
