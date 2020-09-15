@@ -268,3 +268,5 @@ console.log(valN);
 
 valN = window.scrollX;
 console.log(valN);
+
+// window object -> 10:10
