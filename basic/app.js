@@ -283,12 +283,16 @@ console.log(valN);
 // LOCATION OBJECT
 
 valN = window.location;
-// valN = window.origin;
-// valN = window.location.href;
-// console.log(valN);
+
+// these are some location object
+valN = window.location.origin;
+console.log(valN);
+
+valN = window.location.href;
+console.log(valN);
 
 // Redirect -> setting the href
-//  window.location.href = 'http://google.com';
+// window.location.href = 'http://google.com';
 
 // Reload -> the page will reload constantly
 // window.location.reload();
@@ -312,12 +316,23 @@ console.log(`history length : ${valN}`);
 // NAVIGATOR OBJECT -> works with browser not window or environment
 
 valN = window.navigator;
-valN = window.navigator.appName;
-valN = window.navigator.appVersion;
-valN = window.navigator.userAgent;
-valN = window.navigator.platform;
-valN = window.navigator.vendor;
-valN = window.navigator.language;
-
 console.log(valN);
 
+// these are some navigator objects
+valN = window.navigator.appName;
+console.log(valN);
+
+valN = window.navigator.appVersion;
+console.log(valN);
+
+valN = window.navigator.userAgent;
+console.log(valN);
+
+valN = window.navigator.platform;
+console.log(valN);
+
+valN = window.navigator.vendor;
+console.log(valN);
+
+valN = window.navigator.language;
+console.log(valN);
