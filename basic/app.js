@@ -144,6 +144,58 @@ val = fruits.sort();
 val = fruits.reverse();
 console.log(val);
 
+// FUNCTION DECLARATION
+function greet(firstName = 'Default', lastName = 'Name'){
+	return 'Hello '+ firstName + ' ' + lastName;
+}
+console.log(greet('Jhon','Doe'));
+
+// FUNCTION EXPRESSION -> putting a function as a variable assignment, function can be named or annonynous(default)
+
+const square = function(x){ // or (x=anyNum)
+	return x*x;
+}; // semi-colon as square is a variable
+console.log(square(10));
+
+
+// IMMIDIATELY INVOCABLE FUNCTION EXPRESSIONS -> IIFEs its basically a function that we declare and run at the same time , we use these in MODULE PATTERN
+
+(function(){
+	console.log('IFFE Ran');
+})();
+
+
+(function(name){
+	console.log(`Hello ${name}`);
+})('Brad');
+
+// PROPERTY METHODS -> When a function is put inside an object it called method or function as an object property
+
+const todo = {
+	add:function(a,b){
+		// let res = a+b;
+		// console.log(res);
+		return a+b;
+	},
+	edit:function(id){
+		console.log(`Edit todo ${id}`);
+	}
+}
+// we can also define function outside the same object using objectName.functionName
+todo.delete = function(id){
+	console.log(`Delete todo ${id}`);
+}
+// todo.add(5,5);
+console.log(todo.add(5,5));
+todo.edit(23);
+todo.delete(2);
+
+
+
+
+
+
+
 // SORTING FOR NEUMERIC ARRAY
 neumeric = [23,56,12,78];
 // the compare function inside sort() takes 2 elements and compare between them, for 23 and 56 -> 23-56= -33,so 23 is smaller the sorting goes like this, but if we doesnt use the callback function the array of num gets sorted by first dig to avoid that we need the callback function.
@@ -173,27 +225,6 @@ for(let i=0;i<persons.length;i++){
 	console.log(persons[i].name);
 	console.log(persons[i].age);
 }
-
-// PROPERTY FUNCTION (function as an object property)
-const todo = {
-	add:function(a,b){
-		// let res = a+b;
-		// console.log(res);
-		return a+b;
-	},
-	edit:function(id){
-		console.log(`Edit todo ${id}`);
-	}
-}
-
-// we can also define function outside the same object using objectName.functionName
-todo.delete = function(id){
-	console.log(`Delete todo ${id}`);
-}
-// todo.add(5,5);
-console.log(todo.add(5,5));
-todo.edit(23);
-todo.delete(2);
 
 // Map
 
@@ -343,3 +374,6 @@ console.log(valN);
 // c.push('last');
 // c.unshift('first');
 // console.log(c);
+
+// taking id form html file using getElementById() and entering value using innerHTML
+document.getElementById("demo").innerHTML = 'Replacing id -> demo form HTML file';
