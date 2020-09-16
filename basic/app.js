@@ -78,6 +78,7 @@ console.log(typeof v9);
 
 // TYPE CASTING
 // number to string
+// .toString() -> also works
 let val;
 val = String(5);
 console.log(val);
@@ -106,7 +107,7 @@ console.log(val.toFixed(5));
 val = Math.floor(Math.random() * 20);
 console.log(val);
 
-// splitting on base of space
+// splitting on base of space (same for any separator)
 const str = 'hello world good morning';
 val = str.split(' ');
 console.log(val);
@@ -135,17 +136,18 @@ html =
 // document.body.innerHTML=html;
 document.write(html);
 
-// 15 Aug
+// 15 Sep
 // SORTING FOR STRING ARRAY sort() -> in general sorts Alphabetically
 fruits = ["Banana", "Orange", "Apple", "Mango"];
 val = fruits.sort();
+// before reversing the array we need to .sort() it first
 val = fruits.reverse();
 console.log(val);
 
 // SORTING FOR NEUMERIC ARRAY
 neumeric = [23,56,12,78];
-// assending order
 // the compare function inside sort() takes 2 elements and compare between them, for 23 and 56 -> 23-56= -33,so 23 is smaller the sorting goes like this, but if we doesnt use the callback function the array of num gets sorted by first dig to avoid that we need the callback function.
+// assending order
 val = neumeric.sort(function(a,b){return a-b});
 console.log(val);
 // decending order
@@ -162,22 +164,22 @@ val = numbers.find(over50);
 console.log(val);
 
 // ARRAY OF OBJECTS
-const person = [
+const persons = [
 	{name: 'john',age: '30'},
 	{name: 'mike', age: '56'},
 	{name: 'jake', age: '78'}
 ];
-val = person;
-for(let i=0;i<person.length;i++){
-	console.log(person[i].name);
-	console.log(person[i].age);
+for(let i=0;i<persons.length;i++){
+	console.log(persons[i].name);
+	console.log(persons[i].age);
 }
 
 // PROPERTY FUNCTION (function as an object property)
 const todo = {
 	add:function(a,b){
+		// let res = a+b;
+		// console.log(res);
 		return a+b;
-		// console.log('Add todo');
 	},
 	edit:function(id){
 		console.log(`Edit todo ${id}`);
@@ -188,7 +190,7 @@ const todo = {
 todo.delete = function(id){
 	console.log(`Delete todo ${id}`);
 }
-
+// todo.add(5,5);
 console.log(todo.add(5,5));
 todo.edit(23);
 todo.delete(2);
@@ -199,7 +201,7 @@ const users = [
 	{id: 1, name: 'John'},
 	{id: 2, name: 'Steve'}
 ];
-// we use map to create seperate array for name, we dont need to initialize user
+//.map() takes a annonymous function we use map to create seperate array for name, we dont need to initialize user as js is weakly typed
 const ids = users.map (function(user){
 	return user.name;
 });
@@ -226,7 +228,7 @@ const user = {
 	lastName: 'Smith',
 	age: 30
 }
-// for(x in user) -> also working
+// for(x in user) -> also working as js is weakly typed
 for(let x in user){
 	//console.log(x); // returns only keys
 	console.log(`${x}: ${user[x]}`);
@@ -245,6 +247,13 @@ for(let x in user){
 // 	console.log('You cancelled');
 // }
 
+// let condi = confirm('Are you sure?');
+// if(condi == true){
+// 	console.log('pressed OK');
+// }else{
+// 	console.log('pressed cancel');
+// }
+
 // Getting OUTER and INNER Window HEIGHT and WIDTH
 let dimention;
 // OUTER
@@ -261,7 +270,7 @@ console.log(dimention);
 dimention = window.innerWidth;
 console.log(dimention);
 
-// SCROLL points or location Y-> horizontal , X-> vertical
+// SCROLL points or location X-> horizontal , Y-> vertical
 let valN
 valN = window.scrollY;
 console.log(valN);
@@ -269,4 +278,46 @@ console.log(valN);
 valN = window.scrollX;
 console.log(valN);
 
-// window object -> 10:10
+// 16 SEP
+
+// LOCATION OBJECT
+
+valN = window.location;
+// valN = window.origin;
+// valN = window.location.href;
+// console.log(valN);
+
+// Redirect -> setting the href
+//  window.location.href = 'http://google.com';
+
+// Reload -> the page will reload constantly
+// window.location.reload();
+
+
+
+// HISTORY OBJECT
+
+// go() -> bring us back to where ever we came from
+// go(-1) -> previous site
+// go(-2) -> 2 back site
+
+//window.history.go();
+
+// we can also check history length
+
+valN = window.history.length;
+console.log(`history length : ${valN}`);
+
+
+// NAVIGATOR OBJECT -> works with browser not window or environment
+
+valN = window.navigator;
+valN = window.navigator.appName;
+valN = window.navigator.appVersion;
+valN = window.navigator.userAgent;
+valN = window.navigator.platform;
+valN = window.navigator.vendor;
+valN = window.navigator.language;
+
+console.log(valN);
+
