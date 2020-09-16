@@ -336,3 +336,10 @@ console.log(valN);
 
 valN = window.navigator.language;
 console.log(valN);
+
+// let a = [1,2,4,5];
+// let ab = ['abr','df'];
+// let c = a.concat(ab);
+// c.push('last');
+// c.unshift('first');
+// console.log(c);
