@@ -81,6 +81,7 @@ console.log(typeof v9);
 // .toString() -> also works
 let val;
 val = String(5);
+// val = (5).toString();
 console.log(val);
 console.log(typeof val);
 
@@ -95,7 +96,7 @@ val = Number(true);
 // false returns 0
 val = Number(false);
 
-// null returns o
+// null returns 0
 val = Number(null);
 
 console.log(val);
@@ -133,7 +134,7 @@ html =
 		<li>Country: ${country}</li>
 	</ul>`;
 
-// document.body.innerHTML=html;
+// document.body.innerHTML=html; -> it will replace all the previous html and replace with the newly created one
 document.write(html);
 
 // 15 Sep
@@ -164,7 +165,7 @@ console.log(square(10));
 	console.log('IFFE Ran');
 })();
 
-
+// parameterised IIFE
 (function(name){
 	console.log(`Hello ${name}`);
 })('Brad');
@@ -181,7 +182,7 @@ const todo = {
 		console.log(`Edit todo ${id}`);
 	}
 }
-// we can also define function outside the same object using objectName.functionName
+// we can also define function outside the same object using 
 todo.delete = function(id){
 	console.log(`Delete todo ${id}`);
 }
@@ -191,13 +192,8 @@ todo.edit(23);
 todo.delete(2);
 
 
-
-
-
-
-
 // SORTING FOR NEUMERIC ARRAY
-neumeric = [23,56,12,78];
+let neumeric = [23,56,12,78];
 // the compare function inside sort() takes 2 elements and compare between them, for 23 and 56 -> 23-56= -33,so 23 is smaller the sorting goes like this, but if we doesnt use the callback function the array of num gets sorted by first dig to avoid that we need the callback function.
 // assending order
 val = neumeric.sort(function(a,b){return a-b});
@@ -217,9 +213,9 @@ console.log(val);
 
 // ARRAY OF OBJECTS
 const persons = [
-	{name: 'john',age: '30'},
-	{name: 'mike', age: '56'},
-	{name: 'jake', age: '78'}
+	{name: 'john',age: 30},
+	{name: 'mike', age: 56},
+	{name: 'jake', age: 78}
 ];
 for(let i=0;i<persons.length;i++){
 	console.log(persons[i].name);
@@ -232,23 +228,25 @@ const users = [
 	{id: 1, name: 'John'},
 	{id: 2, name: 'Steve'}
 ];
-//.map() takes a annonymous function we use map to create seperate array for name, we dont need to initialize user as js is weakly typed
+//.map() takes a annonymous function we use map to create seperate array form the main array, we dont need to initialize user as js is weakly typed
+
+// making an array of names form the main array using map
 const ids = users.map (function(user){
-	return user.name;
+	return user.id;
 });
 console.log(ids);
 // we use map to create seperate array for id
 const names = users.map (function(user){
-	return user.id;
+	return user.name;
 });
 console.log(names);
 
-// FOR-EACH we dont need to initialize ar  
+// FOR-EACH we dont need to initialize ittarator  
 
 const ar1 = [1,2,4,'sed'];
-// in for-each the function take three parameters, itarator(cumpolsory), index, array.
-ar1.forEach(function(ar, index, array){
-	console.log(`${index}: ${ar}`);
+// in for-each the function take three parameters -> itarator(cumpolsory), index, array.
+ar1.forEach(function(ittarator, index, array){
+	console.log(`${index}: ${ittarator}`);
 	console.log(array);
 });
 
@@ -262,7 +260,7 @@ const user = {
 // for(x in user) -> also working as js is weakly typed
 for(let x in user){
 	//console.log(x); // returns only keys
-	console.log(`${x}: ${user[x]}`);
+	console.log(`${x}: ${user[x]}`); // returns keys:values
 }
 
 // WINDOW METHODS / OBJECTS / PROPERTIES
