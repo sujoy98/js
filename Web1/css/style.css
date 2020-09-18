@@ -41,9 +41,9 @@ ul li a:hover{
     color: black;
     transition: 0.3s ease;
 }
-ul li a:active{
+/* ul li a:active{
     background-color:green;
-}
+} */
 
 .logo img{
     float: left;
@@ -97,6 +97,6 @@ ul li a:active{
     transition: 0.6s ease;
 }
 
-.btn:active{
+/* .btn:active{
     background-color: green;
-}
+} */
