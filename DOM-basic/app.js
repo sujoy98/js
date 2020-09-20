@@ -64,7 +64,7 @@ val = document.links;
 console.log(val);
 
 // we can get specific links with index values
-val = document.links[5];
+val = document.links[0];
 console.log(val);
 
 // we can fetch details form these links
@@ -90,9 +90,14 @@ console.log(val);
 val = document.scripts;
 console.log(val);
 
+// we can view specific script
+val = document.scripts[2];
+console.log(val);
+
+
 // we can get attributes form the scripts
 val = document.scripts[2].getAttribute('src');
-console.log(val);
+console.log(`Src:- ${val}`);
 
 
 // All these are returning values in an array format but can not use any kind of array operation on them, to solve this issue we need to TypeCast into array.
@@ -114,4 +119,130 @@ scriptsArr.forEach(function(script){
 // we can also get the attributes of each of the script on traversing
 scriptsArr.forEach(function(script){
     console.log(script.getAttribute('src'));
+});
+
+
+// SINGLE ELEMENT SELECTOR
+
+    // .getElementById()
+
+console.log(document.getElementById('task-title'));
+
+// Get things form the element
+console.log(document.getElementById('task-title').id);
+console.log(document.getElementById('task-title').className);
+
+
+// its better to create a variable with element id task-title and make the changes
+const taskTitle = document.getElementById('task-title');
+
+// Change styling (css) -> any css color format(rgb,rgba,hexcode,color-name)
+
+// document.getElementById('task-title').style.background = 'grey';
+// document.getElementById('task-title').style.color = 'white';
+// document.getElementById('task-title').style.padding = '5px';
+
+taskTitle.style.background = 'grey';
+taskTitle.style.color = 'white';
+taskTitle.style.padding = '5px';
+
+// it disappear the item in the webpage
+// document.getElementById('task-title').style.display= 'none';
+
+// change content
+
+// Task changes to Task List
+// document.getElementById('task-title').textContent = 'Task List';
+
+taskTitle.textContent = 'Task List';
+
+
+// Task changes to My Task
+// document.getElementById('task-title').innerText = 'My Task';
+taskTitle.innerText = 'My Task';
+
+// we can also insert HTML
+
+// document.getElementById('task-title').innerHTML = '<span style="color:red">Tasks Edited</span>';
+
+taskTitle.innerHTML = '<span style="color:red">Tasks Edited</span>';
+
+
+// SINGLE ELEMENT SELECTOR
+
+// document.querySelector(); -> newer and much more powerfull
+
+// to get element by id in query selector we need to use # before the id form the HTML file
+console.log(document.querySelector('#task-title'));
+
+// to get things by class name we need to use . before the class name just like css
+console.log(document.querySelector('.card-title'));
+
+// we also can get the element itself
+console.log(document.querySelector('h5')); // -> this will return the first h5 tag from the HTML file
+
+// we can also use sub-class like css
+console.log(document.querySelector('ul li'));
+
+// we need to use pseudo css class to target any specific element
+
+// last-child -> last element
+document.querySelector('li:last-child').style.color = 'red';
+
+// first-child -> first element
+document.querySelector('li:first-child').style.color = 'green';
+
+// nth-child(n) -> 1 to nth
+document.querySelector('li:nth-child(2)').style.color = 'purple';
+
+// to change the textContent
+document.querySelector('li:nth-child(2)').textContent = 'Edited Text';
+
+// being a single element selector 'odd' and 'even' pseudo css class only changes the first element
+document.querySelector('li:nth-child(odd)').style.background = '#f4f4f4';
+
+
+// MULTIPLE ELEMENT SELECTOR
+
+// document.getElementsByClassName();
+
+// This is returning all the elements having the class name 'collection-item' in global scope
+const items = document.getElementsByClassName('collection-item');
+console.log(items);
+
+// to access any specific item we use index number
+console.log(items[0]);
+
+items[0].style.color = 'green';
+items[1].textContent = 'Edited';
+
+// Now we dont want to get the elements from the global scope having the class name 'collection-item', we can change scope of that
+
+const listItems = document.querySelector('ul').getElementsByClassName('collection-item'); // -> this will only return the classes inside the 'ul', which we have selected using querySelector('ul')
+
+console.log(listItems);
+
+
+// document.getElementsByTagName() -> works similar like the previous one
+
+let lis = document.getElementsByTagName('li');
+console.log(lis);
+
+// we can also use index numbers to get certain lis
+console.log(lis[0]);
+
+// styling
+lis[0].style.color = 'red';
+lis[0].textContent = 'edited';
+
+// as we already know HTML collection is not an array we need to convert it into array
+
+lis = Array.from(lis);
+lis.reverse();
+console.log(lis);
+
+
+lis.forEach(function(li){
+    console.log(li);
+    console.log(li.className);
 });
