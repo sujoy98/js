@@ -100,7 +100,7 @@ val = document.scripts[2].getAttribute('src');
 console.log(`Src:- ${val}`);
 
 
-// All these are returning values in an array format but can not use any kind of array operation on them, to solve this issue we need to TypeCast into array.
+// All these are returning values in an array format but can not use any kind of array operation on them, to solve this issue we need to TypeCast these HTML collection into array.
 
 let scripts = document.scripts;
 
@@ -170,7 +170,7 @@ taskTitle.innerHTML = '<span style="color:red">Tasks Edited</span>';
 
 // SINGLE ELEMENT SELECTOR
 
-// document.querySelector(); -> newer and much more powerfull
+    // document.querySelector(); -> newer and much more powerfull
 
 // to get element by id in query selector we need to use # before the id form the HTML file
 console.log(document.querySelector('#task-title'));
@@ -216,7 +216,7 @@ console.log(items[0]);
 items[0].style.color = 'green';
 items[1].textContent = 'Edited';
 
-// Now we dont want to get the elements from the global scope having the class name 'collection-item', we can change scope of that
+// Now if we dont want to get the elements from the global scope having the class name 'collection-item', we can change scope of that
 
 const listItems = document.querySelector('ul').getElementsByClassName('collection-item'); // -> this will only return the classes inside the 'ul', which we have selected using querySelector('ul')
 
@@ -246,3 +246,5 @@ lis.forEach(function(li){
     console.log(li);
     console.log(li.className);
 });
+
+// 8:19
