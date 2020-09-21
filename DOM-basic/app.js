@@ -265,7 +265,7 @@ const itemsNew = document.querySelectorAll('ul li');
 
 console.log(itemsNew);
 
-// NODE-List allows us to perform some array operations
+// NODE-List allows us to perform some array operations here we dosent need to convert in into array
 itemsNew.forEach(function(iN, index){ // optional parameter index
     console.log(iN);
     // iN.textContent = `${index}: Hello`;
