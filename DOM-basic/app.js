@@ -242,9 +242,41 @@ lis.reverse();
 console.log(lis);
 
 
-lis.forEach(function(li){
+lis.forEach(function(li, index){ // it takes optional parameter index
     console.log(li);
     console.log(li.className);
+    
+    // to change all li
+    // li.textContent = 'Hello';
+
+    // usign index
+    // li.textContent = `${index}: Hello`;
 });
 
-// 8:19
+
+
+// document.querySelectorAll(); -> returns a NODE-List
+
+// we can put any kind of css selector as a parameter
+const itemsNew = document.querySelectorAll('ul li');
+
+// same as above
+// const itemsNew2 = document.querySelectorAll('ul.collection li.collection-item');
+
+console.log(itemsNew);
+
+// NODE-List allows us to perform some array operations
+itemsNew.forEach(function(iN, index){ // optional parameter index
+    console.log(iN);
+    // iN.textContent = `${index}: Hello`;
+});
+
+const liOdd = document.querySelectorAll('li:nth-child(odd)');
+liOdd.forEach(function(liO, index){ // optional parameter index
+    liO.style.background = 'grey';
+});
+
+const liEven = document.querySelectorAll('li:nth-child(even)');
+for(let i=0;i<liEven.length;i++){
+    liEven[i].style.background = 'red';
+}
