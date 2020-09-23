@@ -86,7 +86,7 @@ console.log(val);
 val = document.images;
 console.log(val);
 
-// SCRIPTS -> list out all the scripts in array format
+// SCRIPTS -> list out all the scripts in array format (HTML collection)
 val = document.scripts;
 console.log(val);
 
@@ -109,6 +109,12 @@ let scripts = document.scripts;
 //     console.log(script);
 // });
 
+// normal for loop works without typecasting to array type
+for(let i=0;i<scripts.length;i++){
+    console.log(scripts[i]);
+}
+
+// using for-Each loop
 let scriptsArr = Array.from(scripts); // TypeCasted to Array type
 
 // returns all the scripts on traversing 
@@ -171,6 +177,8 @@ taskTitle.innerHTML = '<span style="color:red">Tasks Edited</span>';
 // SINGLE ELEMENT SELECTOR
 
     // document.querySelector(); -> newer and much more powerfull
+    
+    // document.querySelector(); -> Returns the first matching Element node within the node's subtree. If no matching node is found, null is returned.
 
 // to get element by id in query selector we need to use # before the id form the HTML file
 console.log(document.querySelector('#task-title'));
@@ -255,12 +263,14 @@ lis.forEach(function(li, index){ // it takes optional parameter index
 
 
 
-// document.querySelectorAll(); -> returns a NODE-List
+// document.querySelectorAll(); -> Returns a NodeList containing all matching Element nodes within the node's subtree, or an empty NodeList if no matches are found.
+
 
 // we can put any kind of css selector as a parameter
+
 const itemsNew = document.querySelectorAll('ul li');
 
-// same as above
+// same as above .collection is the class name
 // const itemsNew2 = document.querySelectorAll('ul.collection li.collection-item');
 
 console.log(itemsNew);
@@ -272,11 +282,13 @@ itemsNew.forEach(function(iN, index){ // optional parameter index
 });
 
 const liOdd = document.querySelectorAll('li:nth-child(odd)');
+
 liOdd.forEach(function(liO, index){ // optional parameter index
-    liO.style.background = 'grey';
+    liO.style.background = '#ccc';
 });
 
 const liEven = document.querySelectorAll('li:nth-child(even)');
-for(let i=0;i<liEven.length;i++){
+
+for(let i=0; i<liEven.length; i++){
     liEven[i].style.background = 'red';
 }
