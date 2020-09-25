@@ -42,7 +42,7 @@ val = list.children[3].children;
 // val = list.children[3].children[0].id = 'test-link'; 
 
 // geting firstChild node
-val = list.firstChild; // it will return text node if it is present
+val = list.firstChild; // it will return text node if it is present at first position
 
 // geting firstChild node without text node , we need to use firstElementChild
 val = list.firstElementChild; 
@@ -61,7 +61,7 @@ val = listItem.parentNode;
 // parentNode and parentElement both are same more or less
 val = listItem.parentElement;
 
-// we can also get the parent of the parent element
+// we can also get the parent element of the parent element
 val = listItem.parentElement.parentElement;
 
 
