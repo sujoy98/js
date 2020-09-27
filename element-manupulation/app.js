@@ -77,12 +77,43 @@ list.removeChild(lis[3]);
 
 // CLASSES AND ATTRUBUTES
 
-// Inside all the 'li' tag there is a 'a' tag for the cross button, which is the children of the 'li' tag, we can access the children with '.children'
+// Inside all the 'li' tag there is a 'a' tag for the cross button, which is the children of the 'li' tag, we know we can access the children with '.children'
 
 const firstLi = document.querySelector('li');
 
 // we are accessing the children with the index value
 const linkNew = firstLi.children[0];
 
-console.log(linkNew);
-// 6:30
+
+let val;
+
+// CLASSES
+val = linkNew.className;
+
+// these return a DOM-token list, and also we can access it with index values
+val = linkNew.classList; 
+
+val = linkNew.classList[0];
+
+// we can also add a class using the classList
+link.classList.add('test-class');
+
+// we can also remove a class using the classList
+link.classList.remove('test-class');
+
+
+// ATTRIBUTES
+val = link.getAttribute('href');
+val = link.setAttribute('href', 'http://google.com');
+val = link.setAttribute('title', 'temp');
+
+
+// we can also check if there is any attribute, returns boolean
+val = link.hasAttribute('href');
+
+// we can also remove an attribute
+val = link.removeAttribute('title');
+
+
+
+console.log(link);
