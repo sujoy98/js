@@ -85,3 +85,4 @@ const firstLi = document.querySelector('li');
 const linkNew = firstLi.children[0];
 
 console.log(linkNew);
+// 6:30
