@@ -25,7 +25,7 @@ link.className = "delete-item secondary-content";
 // adding a href attribute to 'a' tag
 link.setAttribute('href', '#');
 
-// Add icon html (form the html) as there is no text node we are directly using innerHtml
+// Add icon html (form the html file) as there is no text node we are directly using innerHtml
 link.innerHTML = '<i class="fa fa-remove"></i>';
 
 // Append link to li
@@ -34,11 +34,12 @@ li.appendChild(link);
 // Append li as child to ul
 document.querySelector('ul.collection').appendChild(li);
 
-// console.log(li);
+console.log(li);
 
 
-// REPLACE ELEMENT
+// REPLACE ELEMENT -> replaceChild('new', 'old');
 
+// Here we are replacing the heading of the html file
 // Create element
 const newHeading = document.createElement('h2');
 
@@ -48,30 +49,32 @@ newHeading.id = 'task-title';
 // Adding a Text node to the newHeading
 newHeading.appendChild(document.createTextNode('Task List'));
 
-// Get the old heading
+// Get the old heading, also we can use querySelector -> document.querySelector('.task-title');
 const oldHeading = document.getElementById('task-title');
 
 // PARENT, we need to have parent element because we will be using replaceChild function, which we will be calling on the PARENT to replace the heading 
+
+// here the parent of the ul is the div which is having a class called card-action
 const cardAction = document.querySelector('.card-action');
 
 // REPLACE, replaceChild accepts two parameter
 cardAction.replaceChild(newHeading, oldHeading);
 
-// console.log(newHeading); 
+console.log(newHeading); 
 
 
 // REMOVE ELEMENT
 
-// we need a varibale for all the li's
+// we need a varibale for all the li's so that we can access it with index values
 const lis = document.querySelectorAll('li');
-
-// we need a varibale for the list itself (ul)
-const list = document.querySelector('ul');
 
 // removing list item
 lis[0].remove();
 
-// we can also remove using child, ul have li-children
+// we need a varibale for the list itself (ul)
+const list = document.querySelector('ul');
+
+// we can also remove using removechild, ul have li-children
 list.removeChild(lis[3]);
 
 
@@ -83,17 +86,19 @@ const firstLi = document.querySelector('li');
 
 // we are accessing the children with the index value
 const linkNew = firstLi.children[0];
-
+console.log(linkNew);
 
 let val;
 
 // CLASSES
-val = linkNew.className;
+val = linkNew.className; // returns the class name
 
 // these return a DOM-token list, and also we can access it with index values
 val = linkNew.classList; 
+console.log(val);
 
 val = linkNew.classList[0];
+console.log(val);
 
 // we can also add a class using the classList
 link.classList.add('test-class');
