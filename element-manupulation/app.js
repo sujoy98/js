@@ -47,7 +47,7 @@ const newHeading = document.createElement('h2');
 newHeading.id = 'task-title';
 
 // Adding a Text node to the newHeading
-newHeading.appendChild(document.createTextNode('Task List'));
+newHeading.appendChild(document.createTextNode('Task from class card-action'));
 
 // Get the old heading, also we can use querySelector -> document.querySelector('.task-title');
 const oldHeading = document.getElementById('task-title');
