@@ -16,12 +16,14 @@ val = list.childNodes[1].nodeType;
 
 /*
 ~~~~~NODE-TYPE~~~~~~~
-1 -> ELEMENT
-2 -> ATTRIBUTE (deprecated)
-3 -> TEXT NODE
-8 -> COMMENT
-9 -> DOCUMENT ITSELF
-10 -> DOCTYPE
+values        NodeType
+-----------------------
+1       ->    ELEMENT
+2       ->    ATTRIBUTE (deprecated)
+3       ->    TEXT NODE
+8       ->    COMMENT
+9       ->    DOCUMENT ITSELF
+10      ->    DOCTYPE
 */
 
 
