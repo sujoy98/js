@@ -43,8 +43,8 @@ function newF(e){
     val = e.clientX; 
 
     // co-ordinates of the event relative (according) to the element
-    val = e.offsetY; // Y-axis, position may differ on based of the pixel clicked on the padding 
-    val = e.offsetX;// X-axis, position may differ on based of the pixel clicked on the padding 
+    val = e.offsetY; // Y-axis, position may differ on based of the pixel clicked on the padding of an element
+    val = e.offsetX;// X-axis, position may differ on based of the pixel clicked on the padding of an element
     
     // console.log(val);
 }
