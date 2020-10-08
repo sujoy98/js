@@ -48,6 +48,8 @@ function deleteItem(e){
     // BEST WAY, we use classList instead of className.contains
     // and we are targeting the class, here we needed to use parentElement because, the cross icon in a childElement of the 'a' tag, so we called for the parentElement
 
+    // we know that classList returns a DOM-Token List
+
     if(e.target.parentElement.classList.contains('delete-item')){
         console.log('delete item');
         
@@ -55,7 +57,7 @@ function deleteItem(e){
         
         // e.target -> 'i' tag
         // e.target.parentElement -> 'a' tag
-        // e.target.parentElement.parentElement -> 'li' tag , we need this because li i.e the specific lidt element needs to be get deleted
+        // e.target.parentElement.parentElement -> 'li' tag , we need this because li i.e the specific list element needs to be get deleted
         
         e.target.parentElement.parentElement.remove();
 
