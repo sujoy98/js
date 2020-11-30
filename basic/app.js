@@ -1,4 +1,7 @@
-//alert('hello world');
+// alert('hello world');
+
+// const newName = prompt("Enter your name");
+// console.log(`Entered name ${newName}.`);
 
 // log to console
 console.log('hello');
@@ -58,7 +61,11 @@ console.log(typeof v6);
 
 //array
 const v7 = [1,2,34,4];
-// console.log(String(v7));
+
+// array to string
+console.log(String(v7));
+
+console.log(v7);
 
 console.log(typeof v7);
 
@@ -89,6 +96,14 @@ console.log(typeof val);
 // NaN -> not a number
 // string to number
 val = Number('6');
+// val  = parseInt('100'); -> also works to typecast to an integer
+// val  = parseFloat('100'); -> also works to typecast to an float
+
+
+// string to date
+val = String(new Date());
+console.log(val);
+console.log(typeof val);
 
 // true returns 1
 val = Number(true);
@@ -104,7 +119,7 @@ console.log(val);
 console.log(val.toFixed(5));
 
 // .random() gives random decimal number, we are rounding up the random value
-// to get a whole number in this case the range is 20
+// to get a whole number in this case the range is 0-19
 val = Math.floor(Math.random() * 20);
 console.log(val);
 
@@ -132,12 +147,27 @@ html =
 		<li>Age: ${age}</li>
 		<li>Job: ${job}</li>
 		<li>Country: ${country}</li>
+		<li>Country: ${country}</li>
 	</ul>`;
 
 // document.body.innerHTML=html; -> it will replace all the previous html and replace with the newly created one
 document.write(html);
 
 // 15 Sep
+
+// Mixed array
+// const arr = [22,'hello',true,undefined,null,{a:hello, b:world},new Date()]
+
+// let a = [1,2,4,5];
+// let ab = ['abr','df'];
+// let c = a.concat(ab);
+// c.push('last');
+// c.unshift('first');
+// c.pop('remove last');
+// c.shift('remove first');
+// c.splice(1,1);
+// console.log(c);
+
 // SORTING FOR STRING ARRAY sort() -> in general sorts Alphabetically
 fruits = ["Banana", "Orange", "Apple", "Mango"];
 val = fruits.sort();
@@ -230,12 +260,12 @@ const users = [
 ];
 //.map() takes a annonymous function we use map to create seperate array form the main array, we dont need to initialize user as js is weakly typed
 
-// making an array of names form the main array using map
+// making an array of id form the main array using map
 const ids = users.map (function(user){
 	return user.id;
 });
 console.log(ids);
-// we use map to create seperate array for id
+// we use map to create seperate array for names
 const names = users.map (function(user){
 	return user.name;
 });
@@ -309,10 +339,10 @@ console.log(valN);
 
 // 16 SEP
 
-// LOCATION OBJECT
+// LOCATION OBJECT (location object is in window object)
 
 valN = window.location;
-
+console.log(valN);
 // these are some location object
 valN = window.location.origin;
 console.log(valN);
@@ -328,7 +358,7 @@ console.log(valN);
 
 
 
-// HISTORY OBJECT
+// HISTORY OBJECT (history object is in window object)
 
 // go() -> bring us back to where ever we came from
 // go(-1) -> previous site
@@ -342,7 +372,7 @@ valN = window.history.length;
 console.log(`history length : ${valN}`);
 
 
-// NAVIGATOR OBJECT -> works with browser not window or environment
+// NAVIGATOR OBJECT (navigator object is in window object) -> works with browser not window or environment
 
 valN = window.navigator;
 console.log(valN);
