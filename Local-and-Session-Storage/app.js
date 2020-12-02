@@ -28,11 +28,29 @@ taskInput.value = '';
 // ADD A TASK FROM THE HTML-FORM INSIDE THE LOCAL STORAGE
 
 document.querySelector('form').addEventListener('submit', function(e){
-    
-    const task = document.getElementById('task').value; // 'task' is the input id
-    localStorage.setItem('newTask', task)
-    alert('Task Saved');
-
+    const task = document.getElementById('task').value;
+  
+    let tasks;
+  
+    if(localStorage.getItem('tasks') === null) {
+      tasks = [];
+    } else {
+      tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+  
+    // pushing the value comming from the task into the local variable tasks
+    tasks.push(task);
+  
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  
+    alert('Task saved');
+  
     e.preventDefault();
+  });
+
+//   loop through the tasks array
+
+const tasks = JSON.parse(localStorage.getItem('tasks'));
+tasks.forEach(function(task){
+    console.log(task)
 });
-9:02

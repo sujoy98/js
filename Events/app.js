@@ -21,11 +21,11 @@ function newF(e){
 
     let val;
     val = e;
-    // console.log(val);
+    console.log(val);
     
     // Event target element (action taken place target)
     val = e.target;
-    
+    console.log(val);
     // we can perform all the general functions of the DOM (Style, manupulation etc)
     val = e.target.className;
     val = e.target.classList;
@@ -76,8 +76,8 @@ card.addEventListener('mouseleave', runEvent);
 
 // MOUSE-OVER, MOUSE-OUT only gets activated when we visit other element inside the main , here the main is 'card' and 'clear-tasks' is an inside element
 
-// card.addEventListener('mouseover', runEvent);
-// card.addEventListener('mouseout', runEvent);
+card.addEventListener('mouseover', runEvent);
+card.addEventListener('mouseout', runEvent);
 
 // MOUSE-MOVE (it activates the event on any mouse movement inside a specific region, here we took 'card')
 card.addEventListener('mousemove', runEvent);
@@ -91,5 +91,5 @@ function runEvent(e){
     heading.innerText = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
 
     // changing the body background color with mouse movement
-    // document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
+    document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
 }

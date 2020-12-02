@@ -60,7 +60,7 @@ const cardAction = document.querySelector('.card-action');
 // REPLACE, replaceChild accepts two parameter
 cardAction.replaceChild(newHeading, oldHeading);
 
-console.log(newHeading); 
+// console.log(newHeading); 
 
 
 // REMOVE ELEMENT

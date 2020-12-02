@@ -24,15 +24,17 @@
 // })
 
 
-// EVENT DELEGATION, opposite of Event Bubbling
-// we need to use event delegation when we dynamically insert a new element inside the html using js, and also in general case if we do not use  delegation , the operation will only work on the first element
-
 // this method only work for the first element
 // WORST WAY
 // const dleI = document.querySelector('.delete-item').addEventListener('click', deleteItem);
 // function deleteItem(){
 //     console.log('delete item');
 // }
+
+
+// EVENT DELEGATION, opposite of Event Bubbling
+// we need to use event delegation when we dynamically insert a new element inside the html using js, and also in general case if we do not use  delegation , the operation will only work on the first element
+
 
 // here we are adding an event Listener in the body to capture a click event 
 document.body.addEventListener('click', deleteItem);
@@ -42,12 +44,14 @@ function deleteItem(e){
     // GOOD WAY TO DO THIS
 
     // conditional statement to check for the class name    
-    //if(e.target.parentElement.className === 'delete-item secondary-content'){
+    //if(e.target.parentElement.className === 'fa fa remove'){
        // console.log('delete item');
     
     // BEST WAY, we use classList instead of className.contains
-    // and we are targeting the class, here we needed to use parentElement because, the cross icon in a childElement of the 'a' tag, so we called for the parentElement
+    // and we are targeting the class, here we needed to use parentElement because, the cross icon is a 'i' tag which is a childElement of the 'a' tag, so we called for the parentElement
 
+    // we are not using className because for that in the if condition we need to match all the class name of the target element
+    
     // we know that classList returns a DOM-Token List
 
     if(e.target.parentElement.classList.contains('delete-item')){

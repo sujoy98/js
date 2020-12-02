@@ -4,7 +4,7 @@ let val;
 val = document;
 console.log(val);
 
-// returns all of the html collection in an array format
+// returns all of the html collection in an array format but it is not an array its a HTML collection
 val = document.all;
 console.log(val);
 
@@ -171,7 +171,7 @@ taskTitle.innerText = 'My Task';
 
 // document.getElementById('task-title').innerHTML = '<span style="color:red">Tasks Edited</span>';
 
-taskTitle.innerHTML = '<span style="color:red">Tasks Edited</span>';
+taskTitle.innerHTML = '<span style="color:blue">Tasks Edited</span>';
 
 
 // SINGLE ELEMENT SELECTOR

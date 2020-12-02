@@ -19,13 +19,13 @@ taskInput.addEventListener('blur', runEvent);
 
 // CUT and PASTE events are similar like text cut-paste, inside the input area
 taskInput.addEventListener('cut', runEvent);
-taskInput.addEventListener('paste', runEvent);
+taskInput.addEventListener('paste', runEvent); 
 
 // INPUT, it gets activated to any kind of inputs including cut and paste all wull show input event
 // taskInput.addEventListener('input', runEvent);
 
-// Change, this gets activated in changing options
-// select.addEventListener('select', runEvent);
+// Change, this gets activated in changing options from <select></select> tag in the HTML
+// select.addEventListener('change', runEvent);
 
 // KEYBOARD EVENTS
 
