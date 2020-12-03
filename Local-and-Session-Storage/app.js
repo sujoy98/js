@@ -31,17 +31,19 @@ document.querySelector('form').addEventListener('submit', function(e){
     const task = document.getElementById('task').value;
   
     let tasks;
-  
-    if(localStorage.getItem('tasks') === null) {
+
+    // 'taskss' is the key in the local storage
+    if(localStorage.getItem('taskss') === null) {
       tasks = [];
     } else {
-      tasks = JSON.parse(localStorage.getItem('tasks'));
+      // local storage only accepts string to store so we need JSON to parse it
+      tasks = JSON.parse(localStorage.getItem('taskss'));
     }
   
     // pushing the value comming from the task into the local variable tasks
     tasks.push(task);
   
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    localStorage.setItem('taskss', JSON.stringify(tasks));
   
     alert('Task saved');
   
@@ -50,7 +52,7 @@ document.querySelector('form').addEventListener('submit', function(e){
 
 //   loop through the tasks array
 
-const tasks = JSON.parse(localStorage.getItem('tasks'));
+const tasks = JSON.parse(localStorage.getItem('taskss'));
 tasks.forEach(function(task){
     console.log(task)
 });

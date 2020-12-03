@@ -62,6 +62,8 @@ function deleteItem(e){
         // e.target -> 'i' tag
         // e.target.parentElement -> 'a' tag
         // e.target.parentElement.parentElement -> 'li' tag , we need this because li i.e the specific list element needs to be get deleted
+
+        // here we want to click the cross in the list items,  but on clicking the cross we are getting the 'i' tag which is the icon tag but we need  the 'a' tag which is having a "delete-item" class, for that we need parent of 'i' and for delete we need to delete the 'li' for that we need to targer the parrent element of the 'a' tag 
         
         e.target.parentElement.parentElement.remove();
 
