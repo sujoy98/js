@@ -28,7 +28,9 @@ taskInput.value = '';
 // ADD A TASK FROM THE HTML-FORM INSIDE THE LOCAL STORAGE
 
 document.querySelector('form').addEventListener('submit', function(e){
-    const task = document.getElementById('task').value;
+  
+  // task  from html file line 25 having id task 
+  const task = document.getElementById('task').value;
   
     let tasks;
 
@@ -37,13 +39,16 @@ document.querySelector('form').addEventListener('submit', function(e){
       tasks = [];
     } else {
       // local storage only accepts string to store so we need JSON to parse it
-      tasks = JSON.parse(localStorage.getItem('taskss'));
+      tasks = JSON.stringify(localStorage.getItem('taskss'));
     }
   
     // pushing the value comming from the task into the local variable tasks
     tasks.push(task);
   
     localStorage.setItem('taskss', JSON.stringify(tasks));
+
+    // 'taskss' is the key in the local storage
+    // localStorage.setItem('taskss',task);
   
     alert('Task saved');
   
@@ -52,7 +57,7 @@ document.querySelector('form').addEventListener('submit', function(e){
 
 //   loop through the tasks array
 
-const tasks = JSON.parse(localStorage.getItem('taskss'));
-tasks.forEach(function(task){
-    console.log(task)
-});
+// const tasks = JSON.parse(localStorage.getItem('taskss'));
+// tasks.forEach(function(taskItarator){
+//     console.log(taskItarator)
+// });
